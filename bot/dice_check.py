@@ -12,12 +12,10 @@ def get_score_change(dice_value: int) -> int:
     """
 
     # Совпадающие значения (кроме 777)
-    if dice_value in (1, 22, 43):
+    if dice_value in {1, 22, 43}:
         return 7
-    # Начинающиеся с двух семёрок (опять же, не учитываем 777)
-    elif dice_value in (16, 32, 48):
+    elif dice_value in {16, 32, 48}:
         return 5
-    # Джекпот (три семёрки)
     elif dice_value == 64:
         return 10
     else:
